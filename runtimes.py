@@ -37,13 +37,10 @@ if __name__ == '__main__':
             # (it turns out to be common to run sorting algorithms on lists that are already sorted or almost sorted)
             # the timsort algorithm has extra optimizations for this case,
             # and whenever the input list is sorted, timsort will run in time Theta(n) instead of Theta(n log n)
-            #
             # your specific task is to make xs be a list of all numbers between 0 and 2**x
-            xs = FIXME
-
+            xs = (list(range(2**x)))
             # HINT:
             # use the range and list functions
-
         # calculate the runtimes
         runtimes = {}
         runtimes['timsort'] = timeit.timeit(lambda: sorted(xs), number=1)
@@ -60,6 +57,3 @@ if __name__ == '__main__':
         # you will have to also print a header line somewhere else.
         #print(f'len(xs)=2**{x} runtimes={runtimes}')
         print(f"| 2**{x} |    {runtimes['timsort']:0.2e}    |    {runtimes['merge_sorted']:0.2e}   |   {runtimes['quick_sorted']:0.2e}   |")
-        # HINT:
-        # use f-strings and a print statement that looks something like
-        # print(f"| {runtimes['timsort']:0.2e} ")
